@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>成都自由行・第一次獨旅</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFCF6;--ink:#3E3A39;--coral:#F2A497;--yellow:#F6D27A;--aqua:#A8D3E6;--green:#B9DAA5;--r:24px;--bd:3px solid var(--ink)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:"Huninn","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;padding-bottom:env(safe-area-inset-bottom,0)}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;background:var(--paper);border-bottom:var(--bd);padding:calc(env(safe-area-inset-top,0px) + 8px) 12px 8px;display:flex;gap:6px;justify-content:center;overflow-x:auto}
+nav a{flex:0 0 auto;text-decoration:none;font-size:15px;padding:4px 14px;border:var(--bd);border-radius:999px;background:var(--paper)}
+nav a:nth-child(1){background:var(--coral)}nav a:nth-child(2){background:var(--aqua)}nav a:nth-child(3){background:var(--yellow)}nav a:nth-child(4){background:var(--green)}nav a:nth-child(5){background:var(--coral)}
+nav a:focus-visible,button:focus-visible,a:focus-visible{outline:3px dashed var(--ink);outline-offset:3px}
+main{max-width:560px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 70px) 16px 48px}
+section{margin-top:36px}
+h2{font-size:22px;margin-bottom:12px;display:inline-block;background:var(--yellow);border:var(--bd);border-radius:999px;padding:0 16px}
+.card{background:var(--paper);border:var(--bd);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.hero{background:var(--aqua);padding:0;overflow:hidden}
+.hero svg{display:block;width:100%;height:auto}
+.title{padding:14px 16px 18px;background:var(--paper);border-top:var(--bd);text-align:center}
+.title h1{font-size:30px;line-height:1.25}
+.title p{font-size:15px}
+.count{display:inline-block;margin-top:10px;padding:6px 18px;background:var(--coral);border:var(--bd);border-radius:999px;font-size:17px}
+.count b{font-size:24px}
+.fl{display:flex;align-items:center;justify-content:space-between;gap:8px;text-align:center}
+.fl .ap{flex:1}.fl .ap b{display:block;font-size:26px}.fl small{display:block;font-size:13px}
+.mid{flex:0 0 76px;font-size:12px}
+.mid i{display:block;border-top:3px dashed var(--ink);margin:4px 0;position:relative}
+.mid i:after{content:"✈";position:absolute;right:-6px;top:-14px;font-style:normal;background:var(--paper);font-size:16px}
+.pill{display:inline-block;border:var(--bd);border-radius:999px;padding:0 12px;font-size:14px;margin-bottom:8px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 10px}
+.tab{flex:0 0 auto;font:inherit;font-size:14px;line-height:1.3;text-align:center;border:var(--bd);border-radius:18px;background:var(--paper);padding:6px 14px;cursor:pointer;color:var(--ink)}
+.tab[aria-selected=true]{background:var(--coral);transform:translateY(-3px)}
+.tab b{display:block;font-size:16px}
+.dayhead{font-size:17px;margin:4px 0 14px}
+.tl{list-style:none;padding:0;position:relative;margin-left:6px}
+.tl:before{content:"";position:absolute;left:51px;top:6px;bottom:6px;border-left:3px dashed var(--ink)}
+.tl li{display:flex;gap:12px;margin-bottom:14px;position:relative}
+.time{flex:0 0 44px;font-size:15px;text-align:right;padding-top:10px}
+.dot{position:absolute;left:44px;top:15px;width:14px;height:14px;border:var(--bd);border-radius:50%;background:var(--green)}
+.must .dot{background:var(--coral)}
+.it{flex:1;margin-left:14px;border:var(--bd);border-radius:20px;padding:10px 14px;background:var(--paper)}
+.must .it{background:#FFF1EE}
+.it h3{font-size:17px;line-height:1.4}
+.it p{font-size:14px;margin-top:2px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.tag{font-size:13px;border:2px solid var(--ink);border-radius:999px;padding:0 10px;line-height:1.6}
+.t-fly{background:var(--coral)}.t-bus{background:var(--yellow)}.t-move{background:var(--aqua)}.t-pay{background:var(--green)}
+.star{display:inline-block;background:var(--coral);border:2px solid var(--ink);border-radius:999px;font-size:13px;padding:0 9px;margin-right:6px;vertical-align:2px}
+.go{font-size:13px;display:inline-block;margin-top:4px}
+.pop{animation:pop .55s cubic-bezier(.34,1.8,.5,1) both}
+.pop li:nth-child(2){animation-delay:.05s}.pop li:nth-child(3){animation-delay:.1s}.pop li:nth-child(4){animation-delay:.15s}.pop li:nth-child(5){animation-delay:.2s}
+.pop li{animation:pop .55s cubic-bezier(.34,1.8,.5,1) both}
+@keyframes pop{0%{transform:scale(.8) translateY(14px);opacity:0}100%{transform:none;opacity:1}}
+.bar{height:16px;border:var(--bd);border-radius:999px;overflow:hidden;margin-bottom:12px;background:var(--paper)}
+.bar div{height:100%;background:var(--green);width:0;transition:width .4s cubic-bezier(.34,1.5,.5,1)}
+.todo{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.todo label{display:flex;align-items:center;gap:8px;border:var(--bd);border-radius:16px;padding:8px 10px;font-size:14px;line-height:1.3;cursor:pointer;background:var(--paper);height:100%}
+.todo input{appearance:none;flex:0 0 24px;width:24px;height:24px;border:var(--bd);border-radius:8px;background:var(--paper);display:grid;place-items:center;cursor:pointer}
+.todo input:checked{background:var(--green)}
+.todo input:checked:after{content:"✓";font-size:16px;line-height:1}
+.todo input:checked+span{text-decoration:line-through;text-decoration-thickness:2px}
+.stay h3{font-size:19px;line-height:1.4}
+.stay dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:10px 0;font-size:15px}
+.stay dt{background:var(--aqua);border:2px solid var(--ink);border-radius:999px;padding:0 10px;font-size:13px;align-self:start}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.btn{text-decoration:none;font-size:14px;border:var(--bd);border-radius:999px;padding:4px 16px;background:var(--yellow)}
+footer{text-align:center;font-size:13px;margin-top:36px}
+/* illustration motion */
+.cloud{animation:drift 14s ease-in-out infinite alternate}.cloud2{animation-duration:19s}
+.plane{animation:fly 16s linear infinite}
+.sway{transform-box:fill-box;transform-origin:50% 100%;animation:sway 4s ease-in-out infinite}
+.steam{animation:rise 3s ease-in-out infinite}.steam2{animation-delay:1.2s}
+.chew{transform-box:fill-box;transform-origin:50% 100%;animation:chew 1.6s ease-in-out infinite}
+@keyframes drift{to{transform:translateX(26px)}}
+@keyframes fly{0%{transform:translate(-80px,6px)}50%{transform:translate(160px,-6px)}100%{transform:translate(440px,6px)}}
+@keyframes sway{50%{transform:rotate(3deg)}0%,100%{transform:rotate(-3deg)}}
+@keyframes rise{0%{transform:translateY(8px);opacity:0}40%{opacity:1}100%{transform:translateY(-12px);opacity:0}}
+@keyframes chew{50%{transform:translateY(2px) scale(1.02)}}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav aria-label="主選單"><a href="#home">首頁</a><a href="#flight">航班</a><a href="#plan">行程</a><a href="#todo">待辦</a><a href="#stay">住宿</a></nav>
+<main>
+<section id="home" style="margin-top:0">
+<div class="card hero">
+<svg viewBox="0 0 360 240" role="img" aria-label="成都插圖：熊貓吃竹子、寬窄巷子的屋簷、火鍋與飛機">
+<g stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<circle cx="300" cy="46" r="22" fill="#F6D27A"/>
+<g class="cloud"><path d="M40 62h70a16 16 0 0 0-4-30 22 22 0 0 0-42-4 18 18 0 0 0-24 34z" fill="#FFFCF6"/></g>
+<g class="cloud cloud2"><path d="M190 40h50a12 12 0 0 0-2-22 16 16 0 0 0-30-2 13 13 0 0 0-18 24z" fill="#FFFCF6"/></g>
+<g class="plane"><ellipse cx="0" cy="40" rx="26" ry="8" fill="#FFFCF6"/><path d="M-6 40l-12-22h12l14 22zM-24 40l-8-12h8l6 12z" fill="#F2A497"/><circle cx="12" cy="38" r="2" fill="#3E3A39"/></g>
+<path d="M0 190q60-40 120-10t120-10 120 10v60H0z" fill="#B9DAA5"/>
+<rect x="0" y="205" width="360" height="40" fill="#B9DAA5" stroke="none"/>
+<!-- 寬窄巷子 gate -->
+<rect x="34" y="120" width="12" height="75" fill="#F6D27A"/><rect x="104" y="120" width="12" height="75" fill="#F6D27A"/>
+<rect x="46" y="150" width="58" height="45" fill="#FFFCF6"/>
+<path d="M18 122q57-28 114 0l-10 12H28z" fill="#F2A497"/><path d="M40 100q35-20 70 0l-6 10H46z" fill="#F2A497"/>
+<rect x="68" y="168" width="14" height="27" rx="7" fill="#F6D27A"/>
+<!-- hotpot -->
+<path d="M96 212a36 22 0 0 0 72 0z" fill="#F2A497"/><ellipse cx="132" cy="212" rx="36" ry="9" fill="#F6D27A"/>
+<circle cx="120" cy="212" r="3" fill="#F2A497" stroke="none"/><circle cx="136" cy="214" r="3" fill="#F2A497" stroke="none"/><circle cx="146" cy="210" r="3" fill="#F2A497" stroke="none"/>
+<path class="steam" d="M118 198q-6-8 0-14t0-12" fill="none"/><path class="steam steam2" d="M140 198q-6-8 0-14t0-12" fill="none"/>
+<!-- bamboo -->
+<g class="sway"><rect x="196" y="80" width="12" height="130" fill="#B9DAA5"/><path d="M196 118h12M196 160h12" fill="none"/><path d="M208 100q26-4 34-22-24 0-34 22zM196 134q-26-4-34-22 24 0 34 22z" fill="#B9DAA5"/></g>
+<!-- panda -->
+<g class="chew">
+<ellipse cx="264" cy="217" rx="12" ry="8" fill="#3E3A39"/><ellipse cx="300" cy="217" rx="12" ry="8" fill="#3E3A39"/>
+<ellipse cx="282" cy="198" rx="30" ry="24" fill="#FFFCF6"/>
+<ellipse cx="255" cy="192" rx="8" ry="13" transform="rotate(30 255 192)" fill="#3E3A39"/><ellipse cx="309" cy="192" rx="8" ry="13" transform="rotate(-30 309 192)" fill="#3E3A39"/>
+<circle cx="253" cy="120" r="12" fill="#3E3A39"/><circle cx="311" cy="120" r="12" fill="#3E3A39"/>
+<ellipse cx="282" cy="152" rx="38" ry="33" fill="#FFFCF6"/>
+<ellipse cx="266" cy="153" rx="9" ry="11" transform="rotate(15 266 153)" fill="#3E3A39"/><ellipse cx="298" cy="153" rx="9" ry="11" transform="rotate(-15 298 153)" fill="#3E3A39"/>
+<circle cx="266" cy="151" r="5" fill="#FFFCF6" stroke="none"/><circle cx="298" cy="151" r="5" fill="#FFFCF6" stroke="none"/>
+<circle cx="267" cy="152" r="3" fill="#3E3A39" stroke="none"/><circle cx="297" cy="152" r="3" fill="#3E3A39" stroke="none"/>
+<circle cx="268" cy="150.5" r="1.2" fill="#FFFCF6" stroke="none"/><circle cx="298" cy="150.5" r="1.2" fill="#FFFCF6" stroke="none"/>
+<circle cx="252" cy="168" r="5" fill="#F2A497" stroke="none"/><circle cx="312" cy="168" r="5" fill="#F2A497" stroke="none"/>
+<ellipse cx="282" cy="162" rx="4" ry="3" fill="#3E3A39"/><path d="M276 169q3 4 6 0q3 4 6 0" fill="none"/>
+</g>
+</g>
+</svg>
+<div class="title"><h1>成都自由行</h1><p>第一次獨旅 ・ 7/24（五）– 7/28（二）</p><div class="count" id="count" aria-live="polite"></div></div>
+</div>
+</section>
+
+<section id="flight"><h2>航班</h2>
+<div class="card" style="background:var(--aqua)"><span class="pill t-fly">去程 ・ 長榮 BR765</span>
+<div class="fl"><div class="ap"><b>14:30</b>桃園 T2<small>7/24（五）</small></div><div class="mid">3小時35分<i></i>經濟艙</div><div class="ap"><b>18:05</b>成都天府 T1<small>7/24（五）</small></div></div></div>
+<div class="card" style="background:var(--yellow)"><span class="pill" style="background:var(--paper)">回程 ・ 長榮 BR2770</span>
+<div class="fl"><div class="ap"><b>13:30</b>成都天府 T1<small>7/28（二）</small></div><div class="mid">3小時25分<i></i>經濟艙</div><div class="ap"><b>16:55</b>桃園 T2<small>7/28（二）</small></div></div></div>
+</section>
+
+<section id="plan"><h2>每日行程</h2>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div id="day"></div>
+</section>
+
+<section id="todo"><h2>出發前待辦</h2>
+<div class="card"><div class="bar"><div id="prog"></div></div><p id="progtxt" style="margin-bottom:12px;font-size:15px"></p><ul class="todo" id="todolist"></ul></div>
+</section>
+
+<section id="stay"><h2>住宿</h2>
+<div class="card stay"><span class="pill t-move">7/24 – 7/28 ・ 四晚</span>
+<h3>初品・精選酒店（成都春熙路太古里店）</h3>
+<dl><dt>類型</dt><dd>舒適型</dd><dt>地址</dt><dd>四川省成都市錦江區青年路67號</dd><dt>費用</dt><dd>NT$4,388（五天四夜）</dd><dt>付款</dt><dd>支付寶</dd></dl>
+<div class="btns"><a class="btn" href="https://www.google.com/maps/place/四川省成都市锦江区青年路67号" target="_blank" rel="noopener">Google 地圖</a><a class="btn" style="background:var(--aqua)" href="https://surl.amap.com/aIt8Fg17cuj" target="_blank" rel="noopener">高德導航</a><a class="btn" style="background:var(--green)" href="https://www.trip.com/w/zsI8Q9j6cV2" target="_blank" rel="noopener">訂房頁面</a></div></div>
+<div class="card"><b>匯率</b>：人民幣 1 元 ≈ NT$4.8</div>
+</section>
+<footer>祝旅途愉快！🐼</footer>
+</main>
+<script>
+const D=[
+{d:"7/24",w:"五",h:"出發・抵達成都",i:[
+{t:"14:30",n:"搭長榮 BR765 飛往成都",tag:[["fly","飛機 3小時35分"]]},
+{t:"18:05",n:"抵達成都天府機場 T1",p:"入境後前往市區"},
+{t:"20:00",n:"機場 → 住宿",p:"搭機場巴士，約 2 小時",tag:[["bus","機場巴士"],["move","約2小時"],["pay","¥15"]]},
+{t:"22:00",n:"春熙路太古里晚餐・五里關火鍋",p:"春熙路店，備案：岳富貴老火鍋（營業到 01:00）",must:1,tag:[["move","約9分鐘"],["pay","現金 ¥116"]]}]},
+{d:"7/25",w:"六",h:"文殊院・演唱會日",i:[
+{t:"08:00",n:"到家張醪糟（非遺傳承總店）",tag:[["move","約10分鐘"]]},
+{t:"09:30",n:"文殊院",p:"營業 08:30–17:00",tag:[["move","約29分鐘"]]},
+{t:"11:00",n:"老媽蹄花總店（鹽市口店）",p:"營業 10:00–12:00",tag:[["move","約1小時3分"]]},
+{t:"12:30",n:"香園自助小火鍋",tag:[["pay","¥100"]]},
+{t:"16:00",n:"侯明昊成都演唱會 ⭐",p:"五糧液文化體育中心・提早 3 小時到",must:1,go:"https://surl.amap.com/dq0Jvme1efDS",tag:[["move","約1小時"],["pay","票價 1599"]]}]},
+{d:"7/26",w:"日",h:"春熙路・寬窄巷子",i:[
+{t:"10:30",n:"逛春熙路太古里",must:1},
+{t:"12:00",n:"樂山胖哥蹺腳牛肉",p:"營業 11:00–14:30"},
+{t:"13:30",n:"東郊記憶",p:"4A 景區",go:"https://surl.amap.com/klvT9oy1h7CS",tag:[["move","約43分鐘"],["pay","¥4"]]},
+{t:"16:30",n:"寬窄巷子",p:"特色街區",must:1,go:"https://surl.amap.com/eY1aBpA1j67E",tag:[["move","約26分鐘"]]}]},
+{d:"7/27",w:"一",h:"熊貓谷・都江堰",i:[
+{t:"08:00",n:"熊貓谷",p:"看大熊貓",must:1,tag:[["move","約20分鐘"]]},
+{t:"11:30",n:"都江堰",p:"5A 景區・公園路",must:1,go:"https://surl.amap.com/2YFETHHjJ8v3",tag:[["move","約70分鐘"]]}]},
+{d:"7/28",w:"二",h:"回家",i:[
+{t:"09:00",n:"前往成都天府機場",tag:[["move","約70分鐘"]]},
+{t:"13:30",n:"搭長榮 BR2770 返回桃園",tag:[["fly","飛機 3小時25分"]]},
+{t:"16:55",n:"抵達桃園機場 T2",p:"旅程結束，平安回家"}]}];
+const tabs=document.getElementById("tabs"),day=document.getElementById("day");
+function show(k){
+ [...tabs.children].forEach((b,j)=>b.setAttribute("aria-selected",j==k));
+ const x=D[k];
+ day.innerHTML='<p class="dayhead">Day '+(k+1)+'・'+x.h+'</p><ul class="tl pop">'+x.i.map(e=>
+ '<li class="'+(e.must?"must":"")+'"><span class="time">'+e.t+'</span><span class="dot"></span><div class="it"><h3>'+(e.must?'<span class="star">必去</span>':'')+e.n+'</h3>'+(e.p?'<p>'+e.p+'</p>':'')+
+ ((e.tag||[]).length?'<div class="tags">'+e.tag.map(g=>'<span class="tag t-'+g[0]+'">'+g[1]+'</span>').join("")+'</div>':'')+
+ (e.go?'<a class="go" href="'+e.go+'" target="_blank" rel="noopener">開啟導航</a>':'')+'</div></li>').join("")+'</ul>';
+}
+D.forEach((x,k)=>{const b=document.createElement("button");b.className="tab";b.type="button";b.setAttribute("role","tab");
+ b.innerHTML='<b>Day '+(k+1)+'</b>'+x.d+'（'+x.w+'）';b.onclick=()=>show(k);tabs.appendChild(b)});
+show(0);
+/* countdown */
+const go=new Date("2026-07-24T14:30:00+08:00"),end=new Date("2026-07-28T16:55:00+08:00"),c=document.getElementById("count");
+function tick(){const n=new Date();
+ if(n<go){const s=Math.floor((go-n)/1000);c.innerHTML='距離出發 <b>'+Math.floor(s/86400)+'</b> 天 '+Math.floor(s%86400/3600)+' 小時'}
+ else if(n<end){const k=Math.min(4,Math.floor((n-new Date("2026-07-24T00:00:00+08:00"))/864e5));c.innerHTML='旅行中・第 <b>'+(k+1)+'</b> 天'}
+ else{c.innerHTML='旅程已完成 <b>'+Math.floor((n-end)/864e5)+'</b> 天，好好回味 🐼'}}
+tick();setInterval(tick,60000);
+/* todo */
+const items=["充電線（手機、行充）","行動電源","台胞證","護照","信用卡","機票列印","沖牙機（沖好電）","衣服","薄外套","雨傘","人民幣","錢包","耳機","藥"];
+let st;try{st=JSON.parse(localStorage.getItem("cd-todo"))}catch(e){}
+if(!Array.isArray(st)||st.length!=items.length)st=items.map(()=>true);
+const ul=document.getElementById("todolist");
+function prog(){const n=st.filter(Boolean).length;document.getElementById("prog").style.width=n/items.length*100+"%";document.getElementById("progtxt").textContent="已完成 "+n+" / "+items.length+(n==items.length?"，準備好出發了！":"")}
+items.forEach((t,k)=>{const l=document.createElement("li");l.innerHTML='<label><input type="checkbox"><span></span></label>';
+ const i=l.querySelector("input");l.querySelector("span").textContent=t;i.checked=st[k];
+ i.onchange=()=>{st[k]=i.checked;try{localStorage.setItem("cd-todo",JSON.stringify(st))}catch(e){}prog()};ul.appendChild(l)});
+prog();
+</script>
+</body>
+</html>
